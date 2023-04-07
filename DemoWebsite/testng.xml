@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Demo Website">
+	<listeners>
+		<listener class-name="listeners.ExtentReportListener"/>
+	</listeners>
+	<test name="Regression">
+		<classes>
+			<class name="testclasses.ElementsPageTest" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
