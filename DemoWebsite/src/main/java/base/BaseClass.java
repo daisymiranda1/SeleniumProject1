@@ -9,6 +9,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 
+import utilityclasses.TestUtility;
+
 import org.apache.log4j.Logger;
 
 import factory.DriverFactory;
@@ -16,7 +18,7 @@ import pages.ElementsPage;
 
 public class BaseClass {
 	DriverFactory df;
-	public Properties prop;
+	public static Properties prop;
 	public static WebDriver driver;
 	public static ElementsPage elementPage;
 	private static final Logger Log = Logger.getLogger(BaseClass.class);
@@ -36,6 +38,7 @@ public class BaseClass {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
+		TestUtility.setDateForLog4j();
 	}
 
 	@AfterTest

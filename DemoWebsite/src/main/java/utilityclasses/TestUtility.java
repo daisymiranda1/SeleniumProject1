@@ -7,9 +7,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+
+import base.BaseClass;
 
 public class TestUtility {
 	//Extent Report - 1.
@@ -29,6 +32,13 @@ public class TestUtility {
 			File finalDestination = new File(destination);
 			FileUtils.copyFile(source, finalDestination);
 			return destination;
+		}
+		//Set Date For Log4J.
+		public static void setDateForLog4j()
+		{
+			SimpleDateFormat dateFormat = new SimpleDateFormat("_ddMMyyyy_HHmmss");
+			System.setProperty("current_date", dateFormat.format(new Date()));
+			PropertyConfigurator.configure("./src/main/resources/log4j.properties");
 		}
 
 

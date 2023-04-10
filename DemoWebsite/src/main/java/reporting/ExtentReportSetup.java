@@ -11,7 +11,7 @@ import base.BaseClass;
 
 import utilityclasses.TestUtility;
 
-public class ExtentReportSetup 
+public class ExtentReportSetup extends BaseClass
 {	
 	public static ExtentReports extent;
 	public static ExtentTest extentTest;

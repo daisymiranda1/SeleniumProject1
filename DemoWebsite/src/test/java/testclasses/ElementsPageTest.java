@@ -8,25 +8,24 @@ import org.testng.annotations.Test;
 
 import base.BaseClass;
 import pages.ElementsPage;
-
+import org.apache.log4j.Logger;
 public class ElementsPageTest extends BaseClass {
 
-
-	ElementsPage page1=new ElementsPage();
-
+	ElementsPage page1 = new ElementsPage();
+	
+	private static final Logger LOG = Logger.getLogger(ElementsPageTest.class);
 	@Test(priority = 1)
-	public void Fullname() throws InterruptedException {
-
-		page1.Form();
-
+	public void VerifyfullnameTest() throws InterruptedException {
+		page1.Menu();
+		Assert.assertTrue(page1.Verifyfullname());
+		LOG.info("full name textbox verified");
 	}
 
-	/*
-	 * @Test(priority = 2) public void CountrySelectionTestfrench() throws
-	 * InterruptedException {
-	 * 
-	 * CountryPage.countrySelection(prop.getProperty("Country2"),
-	 * prop.getProperty("Language2"));
-	 * Assert.assertEquals(CountryPage.patientPage(), false); }
-	 */
+	@Test(priority = 2)
+	public void VerifyEmailTest() throws InterruptedException {
+		page1.Menu();
+		Assert.assertTrue(page1.VerifyEmailIDtextbox());
+		// Assert.assertEquals(CountryPage.patientPage(), false);
+	}
+
 }

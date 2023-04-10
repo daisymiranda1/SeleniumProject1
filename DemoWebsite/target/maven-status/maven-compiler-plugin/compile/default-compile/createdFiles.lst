@@ -1,5 +1,6 @@
 listeners\ExtentReportListener.class
 base\BaseClass.class
+utilityclasses\ExcelConnection$1.class
 pages\LoginPage.class
 pages\ElementsPage.class
 reporting\ExtentReportSetup.class
